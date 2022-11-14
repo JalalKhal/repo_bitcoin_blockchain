@@ -3,19 +3,21 @@ https://www.ussc.gov/sites/default/files/pdf/training/annual-national-training-s
 
 
 PLAN:
-
-I) fonctionement de la blockchain bitcoin (Proof of work)
-II)Potentielles attaques sur cette block chain
+Introduction)
+A-I) fonctionement de la blockchain Bitcoin (Proof of work)
+A-II)Potentielles attaques sur cette blockchain
     - fragilité de l'algorithme (SHA-256) / attaque brute force
     - Règle des 51%
-III) Limite de la blockchain Bitcoin
-A developper...
-IV) solution --> fonctionnement blockchain Ethereum: Proof of Stake
-V) Limites de l'ethereum/ attaques possibles
-VI) Application blockchain ethereum (smart contract, création de monnaie)
+A-III) Limite de la blockchain Bitcoin
+A développer...
 
--->Mettre des données : registre des blocs/nombres de transactions par jour/ utilisation de l'energie...
+B-I) Solution --> fonctionnement blockchain Ethereum: Proof of Stake
+B-II) Limites de cette blockchain/ attaques possibles
+B-III) Application blockchain Ethereum (smart contract, création de monnaie...)
+
+-->Mettre des données : registre des blocs/nombres de transactions par jour/ utilisation de l'énergie...
+
 Partie technique:
-Simulation de blockchain bitcoin/ ethereum
---> envoi de paquets/messages | plus difficile simulation d'une économie.
-     
+-Simulation de blockchain Bitcoin/ Ethereum
+    --> envoi de paquets/messages | plus difficile simulation d'une économie.
+-Dévelopement de smart-contract sur Solidity (Ethereum).
