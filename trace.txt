@@ -21,3 +21,7 @@ Partie technique:
 -Simulation de blockchain Bitcoin/ Ethereum
     --> envoi de paquets/messages | plus difficile simulation d'une économie.
 -Dévelopement de smart-contract sur Solidity (Ethereum).
+
+
+
+transactions signées:https://bitcoin.fr/comprendre-la-signature-des-transactions-bitcoin/
