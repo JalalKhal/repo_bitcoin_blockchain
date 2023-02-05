@@ -1,0 +1,7 @@
+#Transaction class
+INIT_TRANSACTION=["INIT"]
+FEES=0.01
+
+#Block class
+INIT_BLOCK=True
+MINING_DIFFICULTY=2
