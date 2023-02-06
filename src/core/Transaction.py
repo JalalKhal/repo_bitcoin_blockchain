@@ -1,8 +1,8 @@
 from hashlib import sha512
 import json
+
 from src.globals import INIT_TRANSACTION
-
-
+from src.infrastructure.serializer import serialize
 class Transaction:
 
     def __init__(self,\
@@ -25,12 +25,14 @@ class Transaction:
         self.fees=fees
         self.sign=sign
         assert fees >=0 and amount>=0
-        assert self.verify_transaction_signature() and self.verify_transaction_amount()
+        assert self.verify_transaction()
 
     def __str__(self):
-        return json.dumps({"Transactions":self.transactions,"Sender key":self.sender_key,\
-        "Receiver key":self.receiver_key,"Amount":self.amount,"Fees":self.fees,"Signature":self.sign},default=str)
+        return json.dumps(self,default=serialize)
 
+    def str_signature(self):
+        return json.dumps({"Transactions":self.transactions,"Sender key":self.sender_key, \
+            "Receiver key":self.receiver_key,"Amount":self.amount,"Fees":self.fees},default=str)
 
     def verify_transaction_amount(self):
         """
@@ -46,12 +48,15 @@ class Transaction:
         return total_amount >= self.amount + self.fees
 
     def verify_transaction_signature(self):
-        transaction_wo_sign=json.dumps({"Transactions":self.transactions,"Sender key":self.sender_key, \
-        "Receiver key":self.receiver_key,"Amount":self.amount,"Fees":self.fees},default=str)
-        msg=transaction_wo_sign
+        msg=self.str_signature()
         hashMsg = int.from_bytes(sha512(msg.encode("utf-8")).digest(), byteorder='big')
         hashFromSign=pow(self.sign,self.sender_key[1], self.sender_key[0]) #pow(signature,d,n)
         return hashMsg==hashFromSign
+
+    def verify_transaction(self):
+        return self.verify_transaction_signature() and self.verify_transaction_amount()
+
+
 
 
 

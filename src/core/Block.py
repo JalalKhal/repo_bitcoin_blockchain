@@ -1,9 +1,12 @@
 import json
 from src.core.Transaction import Transaction
 from hashlib import sha512
+from src.infrastructure.serializer import serialize
+
+
 class Block:
 
-    def __init__(self,transactions:list[Transaction],nonce:int,zeros,hashPrevBlock:int,init_block=False):
+    def __init__(self,transactions:list[Transaction],nonce:int,zeros:int,hashPrevBlock:int,init_block=False):
         """
         :param transactions: list of immutable transaction
         :param nonce: nonce for Proof of Work
@@ -18,7 +21,7 @@ class Block:
                 "Nonce":nonce,
                 "Zeros":zeros
             }
-            assert self.verify_integrity_transactions()
+            assert self.verify_block()
         else:
             self.transactions=[]
             self.transaction_counter=0
@@ -27,8 +30,8 @@ class Block:
 
 
     def __str__(self):
-        return json.dumps({"Transactions":self.transactions,"Transaction Counter":self.transaction_counter,\
-                "Header":self.header},default=str)
+        return json.dumps(self,default=serialize)
+
 
     def str_proof(self):
         header_wo_nonce=self.header.copy()
@@ -36,13 +39,19 @@ class Block:
         return json.dumps({"Transactions":self.transactions,"Transaction Counter":self.transaction_counter, \
                            "Header":header_wo_nonce},default=str)
 
-    def verify_integrity_transactions(self):
+    def verify_block(self):
         """
         :return: verify if block is not corrupted
         """
         valid=True
         for t in self.transactions:
             valid=valid and isinstance(t,Transaction)
+            if not valid:
+                return False
+            else:
+                valid=t.verify_transaction()
+            if not valid:
+                return False
         return valid
 
     def hash(self):
