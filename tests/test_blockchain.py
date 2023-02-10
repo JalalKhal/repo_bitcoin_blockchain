@@ -2,12 +2,12 @@ import json
 from hashlib import sha512
 import random
 from Crypto.PublicKey import RSA
-from src.core.Blockchain import Blockchain
-from src.core.Transaction import Transaction
-from src.globals import INIT_TRANSACTION,FEES
+from src.core.component_blockchain.Blockchain import Blockchain
+from src.core.component_blockchain.Transaction import Transaction
+from src.globals import INIT_TRANSACTION,FEES,PORT_BEGIN
 
 if __name__=="__main__":
-    blockchain=Blockchain()
+    blockchain=Blockchain(("localhost",PORT_BEGIN))
     for i in range(101):
         blockchain.register_node(f"localhost:{str(i+10000)}")
         print(f"Test for registering node {i+1}:OK")

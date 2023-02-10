@@ -1,7 +1,7 @@
 import json
 
 from Crypto.PublicKey import RSA
-from src.core.Transaction import Transaction
+from src.core.component_blockchain.Transaction import Transaction
 from hashlib import sha512
 from src.globals import INIT_TRANSACTION,FEES
 import random

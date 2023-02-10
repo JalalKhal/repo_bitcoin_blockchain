@@ -1,12 +1,12 @@
 import json
-from src.core.Transaction import Transaction
+from src.core.component_blockchain.Transaction import Transaction
 from hashlib import sha512
 from src.infrastructure.serializer import serialize
 
 
 class Block:
 
-    def __init__(self,transactions:list[Transaction],nonce:int,zeros:int,hashPrevBlock:int,init_block=False):
+    def __init__(self,transactions:list[Transaction],zeros:int,hashPrevBlock:int,init_block=False,nonce:int=-1):
         """
         :param transactions: list of immutable transaction
         :param nonce: nonce for Proof of Work

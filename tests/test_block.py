@@ -1,8 +1,8 @@
 import json
 
 from Crypto.PublicKey import RSA
-from src.core.Transaction import Transaction
-from src.core.Block import Block
+from src.core.component_blockchain.Transaction import Transaction
+from src.core.component_blockchain.Block import Block
 from hashlib import sha512
 from src.globals import INIT_TRANSACTION,MINING_DIFFICULTY
 

@@ -5,14 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d59f484-5bef-4f28-86a9-20cdba1e7a81" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/serializer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/doc_threads_python.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/identical.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/component_blockchain/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/component_node/NewTransaction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/component_node/Node.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/component_node/ThreadClient.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/component_node/ThreadConnection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/component_node/ThreadServer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/component_node/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/web/FlaskAppWrapper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/web/ThreadFlask.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/web/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/web/templates/create_transactions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/web/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_threads_socket.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Block.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Block.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Blockchain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Transaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Transaction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Block.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/component_blockchain/Block.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/component_blockchain/Blockchain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Transaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/component_blockchain/Transaction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/globals.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/globals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/Writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/Writer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_block.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_block.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_blockchain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_jup.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_jup.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_transaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_transaction.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +67,16 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.test_blockchain">
-    <configuration name="Block" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/web" />
+      <recent name="$PROJECT_DIR$/src/www" />
+      <recent name="$PROJECT_DIR$/src/core" />
+      <recent name="$PROJECT_DIR$/src/core/component_blockchain" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.test_threads_socket">
+    <configuration name="ThreadFlask" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="repo_ethereum_blockchain" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -56,32 +84,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/core" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/web" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/core/Block.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_block" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="repo_ethereum_blockchain" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_block.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/web/ThreadFlask.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -103,6 +110,48 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_blockchain.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_flask" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="repo_ethereum_blockchain" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/web/test_flask.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_threads_socket" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="repo_ethereum_blockchain" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_threads_socket.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -134,10 +183,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test_threads_socket" />
+        <item itemvalue="Python.test_flask" />
+        <item itemvalue="Python.ThreadFlask" />
         <item itemvalue="Python.test_blockchain" />
         <item itemvalue="Python.test_transaction" />
-        <item itemvalue="Python.test_block" />
-        <item itemvalue="Python.Block" />
       </list>
     </recent_temporary>
   </component>

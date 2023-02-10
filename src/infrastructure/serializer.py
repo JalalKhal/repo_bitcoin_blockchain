@@ -2,9 +2,9 @@ from src.globals import INIT_TRANSACTION
 
 
 def serialize(obj):
-    from src.core.Transaction import Transaction
-    from src.core.Block import Block
-    from src.core.Blockchain import Blockchain
+    from src.core.component_blockchain.Transaction import Transaction
+    from src.core.component_blockchain.Block import Block
+    from src.core.component_blockchain.Blockchain import Blockchain
 
 
     if isinstance(obj, Transaction):
@@ -30,8 +30,6 @@ def serialize(obj):
 
     if isinstance(obj,Blockchain):
         return {
-            "node_id":obj.node_id,
-            "nodes":obj.nodes,
             "chain": [serialize(c) for c in obj.chain],
             "transactions": [serialize(t) for t in obj.transactions]
         }
