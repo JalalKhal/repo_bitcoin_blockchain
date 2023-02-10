@@ -1,12 +1,8 @@
 from threading import current_thread
-from time import sleep
 from src.core.component_blockchain.Transaction import Transaction
 from src.core.component_blockchain.Block import Block
 from src.infrastructure.Writer import Writer
-from src.globals import MINING_DIFFICULTY,INIT_BLOCK,FEES
-from uuid import uuid4
-from hashlib import sha512
-import re
+from src.globals import MINING_DIFFICULTY,INIT_BLOCK
 import json
 from src.infrastructure.serializer import serialize
 

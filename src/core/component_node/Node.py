@@ -24,7 +24,7 @@ class Node(threading.Thread):
         self.thread_flask=thread_flask
         self.q=q
         self.lock=lock
-        self.control_user_input=False
+        self.control_freq_transaction=False
         self.list_user_input=[]
         self.coord=None
 
@@ -33,8 +33,12 @@ class Node(threading.Thread):
     def run(self):
         self.thread_server.start()
         sleep(3)
-        thread_transaction_user_input=threading.Thread(target=self.transaction_user_input)
-        thread_transaction_user_input.start()
+        thread_listen_user_input=threading.Thread(target=self.listen_user_input)
+        thread_listen_user_input.start()
+
+        thread_handle_transaction=threading.Thread(target=self.handle_transaction)
+        thread_handle_transaction.start()
+
         thread_submit_block=threading.Thread(target=self.create_block)
         thread_submit_block.start()
 
@@ -66,44 +70,48 @@ class Node(threading.Thread):
                                     self.q.put(nonce)
                                 else:
                                     nonce=self.q.get()
-                        print(f"Node{self.id}:{nonce}")
+
                         break
                 block.set_nonce(nonce)
-                print(f"Node {self.id}:je suis la")
                 self.blockchain.submit_block(block)
                 self.new_transaction.bool_transaction=False
-                self.blockchain.write(file_path=f"noeud{self.id}_blockchain.data",mode="w")
-                self.list_user_input.pop(0)
-                if self.id == self.coord:
-                    sleep(3)
-                self.control_user_input=False
+                self.blockchain.write(file_path=f"noeud{self.id}_blockchain.json",mode="w")
+                if int(self.coord)==int(self.id):
+                    self.list_user_input.pop(0)
+                    self.thread_flask.back["blockchain"]=self.blockchain
+                    self.thread_flask.back["nonce"]=nonce
+                    sleep(3) # wait for others threads to finished to add block to blockchain
+                    self.control_freq_transaction=False
 
 
-    def transaction_user_input(self):
+    def listen_user_input(self):
         while True:
+            sleep(0.5)
             user_input=self.thread_flask.user_input
-            sleep(1)
             if user_input:
+                self.coord=user_input[0]
                 if user_input[1]:
-                    if user_input not in self.list_user_input:
+                    if int(self.id)==int(self.coord):
                         self.list_user_input.append(user_input)
-                    while self.control_user_input:
+                        self.thread_flask.user_input=self.thread_flask.user_input[0],None
+
+    def handle_transaction(self):
+        while True:
+            sleep(1)
+            if self.coord:
+                if int(self.id)==int(self.coord):
+                    while self.control_freq_transaction:
                         sleep(1)#process at this moment for another user input or beginning
                     if len(self.list_user_input):
+                        self.control_freq_transaction=True
                         user_input=self.list_user_input[0]
                         coordinator,amount=user_input
-                        self.coord=coordinator
-                        if self.id==int(coordinator):
-                            self.control_user_input=True
-                            transaction=self.submit_transaction(int(amount))
-                            self.broadcast_message(str(transaction))
-                            self.broadcast_message(f"#OK for transaction#:{str(transaction)}")
-                            self.blockchain.set_transaction(transaction)
-                            self.new_transaction.count_transactions+=1
-                            self.new_transaction.bool_transaction=True
-                            self.control_user_input=True
-                            if self.thread_flask.user_input==user_input:
-                                self.thread_flask.user_input=self.thread_flask.user_input[0],None
+                        transaction=self.create_transaction(int(amount))
+                        self.broadcast_message(str(transaction))
+                        self.broadcast_message(f"#OK for transaction#:{str(transaction)}")
+                        self.blockchain.set_transaction(transaction)
+                        self.new_transaction.count_transactions+=1
+                        self.new_transaction.bool_transaction=True
 
 
 
@@ -121,9 +129,6 @@ class Node(threading.Thread):
 
 
 
-
-
-
     def send(self,port_number,data:str):
         thread_client=ThreadClient(port_number,data)
         thread_client.start()
@@ -131,11 +136,7 @@ class Node(threading.Thread):
         return thread_client.ack
 
 
-    def create_transaction(self,sender_key,receiver_key,amount,sign,transactions_prev):
-        return Transaction(sender_key,receiver_key,amount,FEES,sign,transactions_prev)
-
-
-    def submit_transaction(self,amount,transactions=INIT_TRANSACTION):
+    def create_transaction(self,amount,transactions=INIT_TRANSACTION):
         keyPair_sender=RSA.generate(bits=1024)
         keyPair_receiver=RSA.generate(bits=1024)
         s=keyPair_sender.n,keyPair_sender.e
@@ -145,7 +146,7 @@ class Node(threading.Thread):
                                 "Receiver key":r,"Amount":amount,"Fees":fees},default=str)
         hash=int.from_bytes(sha512(transaction_wo_sign.encode("utf-8")).digest(),byteorder="big")
         signature=pow(hash,keyPair_sender.d,keyPair_sender.n)
-        return self.create_transaction(s,r,amount,signature,transactions)
+        return Transaction(s,r,amount,FEES,signature,transactions)
 
 
 

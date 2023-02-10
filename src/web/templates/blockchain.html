@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    .block {
+      display: inline-block;
+      padding: 10px;
+      border: 1px solid black;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .block:hover {
+      background-color: lightgray;
+    }
+    .block-info {
+      display: none;
+      position: absolute;
+      background-color: white;
+      padding: 10px;
+      border: 1px solid black;
+    }
+    .block:hover .block-info {
+      display: block;
+    }
+  </style>
+    <script>
+        function showBlockInfo(elem) {
+          var blockInfo = elem.querySelector(".block-info");
+          blockInfo.style.left = (elem.offsetLeft + elem.offsetWidth) + "px";
+          blockInfo.style.top = elem.offsetTop + "px";
+        }
+    </script>
+</head>
+    <body>
+    <p> Hello</p>
+    <div id="blockchain_id">
+        <!-- This is where the blocks will be displayed -->
+    </div>
+        <script>
+            var blockchain_tag = document.getElementById("blockchain_id");
+            blockchain_tag.innerHTML="Block";
+            let blockchainData;
+            var blockchainData = JSON.parse('{{ blockchain|safe }}');
+            alert(blockchainData.Block0)
+        </script>
+    </body>
+</html>

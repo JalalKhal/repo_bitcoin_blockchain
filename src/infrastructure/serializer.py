@@ -1,6 +1,5 @@
 from src.globals import INIT_TRANSACTION
 
-
 def serialize(obj):
     from src.core.component_blockchain.Transaction import Transaction
     from src.core.component_blockchain.Block import Block
