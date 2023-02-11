@@ -13,7 +13,6 @@ class ThreadClient(threading.Thread):
         s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         try:
             s.connect((host,port))
-            print("Client connecté")
             data=self.data.encode("utf-8")
             s.sendall(data)
             ack=s.recv(1024).decode()

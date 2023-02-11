@@ -17,7 +17,6 @@ class ThreadServer(threading.Thread):
         host,port=("",self.port_number)
         s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         s.bind((host,port))
-        print("Démarrage du serveur ..")
         while True:
             s.listen(5)
             conn,adress=s.accept()

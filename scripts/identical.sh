@@ -1,6 +1,6 @@
 #!/bin/bash
 
-number_files=501
+number_files=2000
 
 for ((i=0; i<number_files; i++))
 do
