@@ -13,10 +13,13 @@
         <form action="/blockchain" method="get">
             <input type="submit" value="View Blockchain">
         </form>
+
         <form>
             <input id="button_pow_id" type="submit" value="Proof of Work Iterations" onclick="getNonce()">
         </form>
-
+        <form action="/choose" method="get">
+            <input type="submit" value="Choose other coordinator">
+        </form>
             <p id="nonce_id">Number of iterations to found Nonce: {{ nonce }}</p>
 
         <script>

@@ -1,5 +1,4 @@
 import json
-
 from Crypto.PublicKey import RSA
 from src.core.component_blockchain.Transaction import Transaction
 from src.core.component_blockchain.Block import Block
@@ -22,7 +21,8 @@ if __name__=="__main__":
         signature=pow(hash,keyPair_sender.d,keyPair_sender.n)
         t=Transaction(s,r,1,0.01,signature)
         transactions.append(t)
-    bloc=Block(transactions=transactions,nonce=1,zeros=MINING_DIFFICULTY,hashPrevBlock=0,init_block=True)
-    print(str(bloc))
+    bloc=Block(transactions=transactions,zeros=MINING_DIFFICULTY,hashPrevBlock=0)
+    print(bloc)
+
 
 

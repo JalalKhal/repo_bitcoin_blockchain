@@ -1,5 +1,4 @@
 import json
-
 from Crypto.PublicKey import RSA
 from src.core.component_blockchain.Transaction import Transaction
 from hashlib import sha512
@@ -29,7 +28,6 @@ if __name__=="__main__":
         signature=pow(hash,keyPair_receiver.d,keyPair_receiver.n)
         t1=Transaction(sender,receiver,amount,fees,signature,transactions=[t])
         print(f"Test to verify transaction (transaction with attributes transactions not empty) validity {i+1}:OK")
-        print(str(t1))
 
 
 

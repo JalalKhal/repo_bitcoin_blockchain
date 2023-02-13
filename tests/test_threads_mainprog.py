@@ -1,11 +1,7 @@
 import threading
-
-from flask import Flask,request,render_template
-
 from src.core.component_node.Node import Node
 from src.globals import N
 from queue import Queue
-
 from src.web.ThreadFlask import ThreadFlask
 
 if __name__=="__main__":
