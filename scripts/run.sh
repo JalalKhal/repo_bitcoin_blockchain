@@ -1,9 +1,9 @@
 #!/bin/bash
-#run in sudo mode,the script must be executed in the scripts folder
+#the script must be executed in the scripts folder -- run in sudo mode
 chmod +x ./init.sh
 ./init.sh
 
 if [ $? -eq 0 ]
         then
-          sudo /etc/poetry/bin/poetry run python ../app.py
+          /etc/poetry/bin/poetry run python ../app.py
 fi

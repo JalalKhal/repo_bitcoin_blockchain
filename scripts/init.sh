@@ -1,5 +1,8 @@
 #!/bin/bash
-#run in sudo mode, the script must be executed in the scripts folder
+#the script must be executed in the scripts folder
+sudo apt update
+sudo apt install build-essential #install C compiler
+
 #installation of specific version of python
 wget https://www.python.org/ftp/python/3.10.7/Python-3.10.7.tgz
 tar -xf Python-3.10.7.tgz Python-3.10.7

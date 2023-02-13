@@ -3,7 +3,7 @@
 ## Installation
 In the scripts folder, follow these steps to install and run the application:
 ```bash
-./run.sh
+sudo ./run.sh
 ```
 
 ## Usage
