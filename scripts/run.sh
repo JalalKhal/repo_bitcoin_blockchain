@@ -1,6 +1,6 @@
 #!/bin/bash
 #run in sudo mode,the script must be executed in the scripts folder
-
+chmod +x ./init.sh
 ./init.sh
 
 if [ $? -eq 0 ]
