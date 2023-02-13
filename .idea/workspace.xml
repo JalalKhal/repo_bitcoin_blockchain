@@ -5,33 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d59f484-5bef-4f28-86a9-20cdba1e7a81" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/init.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/run.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/identical.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/identical.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/component_blockchain/Block.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/component_blockchain/Block.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/component_blockchain/Blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/component_blockchain/Blockchain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/component_blockchain/Transaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/component_blockchain/Transaction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/component_node/NewTransaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/component_node/NewTransaction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/component_node/Node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/component_node/Node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/component_node/ThreadClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/component_node/ThreadClient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/component_node/ThreadConnection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/component_node/ThreadConnection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/component_node/ThreadServer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/component_node/ThreadServer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/globals.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/globals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/Writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/Writer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/FlaskAppWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/FlaskAppWrapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/ThreadFlask.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/ThreadFlask.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/templates/index_choose_node.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/templates/index_choose_node.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/templates/index_create_transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/templates/index_create_transactions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/templates/index_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/templates/index_main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_block.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_block.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_jup.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_threads_socket.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_threads_mainprog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_transaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_transaction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/init.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/init.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
