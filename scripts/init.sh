@@ -17,6 +17,6 @@ if [ $? -eq 0 ]
           echo "Successfully installed poetry"
           echo "Load python packages for the app"
           cd ../
+          /etc/poetry/bin/poetry env use ./Python-3.10.7/python
           /etc/poetry/bin/poetry install
-          /etc/poetry/bin/poetry env use ../Python-3.10.7/python
 fi
